@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,13 +21,15 @@ import java.util.List;
 @Table(name = "_user")
 public class User implements UserDetails {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue
     private Integer id;
     private String firstName;
     private String lastName;
     private String email ;
     private String password;
+    private Instant createdTime;
+    private Instant updatedTime;
 
     @Enumerated(EnumType.STRING)
     private Role role;

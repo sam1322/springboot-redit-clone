@@ -13,22 +13,12 @@ import java.time.Instant;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Post {
+public class Subreddit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long postId;
-    private String postName;
-    private String url;
-    @Lob
+    private Long id;
+    private String name;
     private String description;
-    private int voteCount;
     private Instant createdTime;
     private Instant updatedTime;
-    //    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "userId", referencedColumnName = "userId")
-//    private User user;'
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "id", referencedColumnName = "id")
-//    private Subreddit subreddit;
 }
